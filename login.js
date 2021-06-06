@@ -37,7 +37,7 @@ function signUp(){
             alert("Signed Up");
          var fuserid = firebase.auth().currentUser.uid;
          console.log(fuserid);
-         firebase.database().ref("JAVASCRIPTLOGIN/").set({
+         firebase.database().ref("JAVASCRIPTLOGIN/"+fuserid).set({
              "uid": fuserid ,
              "Email": UserMail,
              "name": UserName,
