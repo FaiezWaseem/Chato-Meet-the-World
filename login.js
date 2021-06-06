@@ -34,7 +34,6 @@ function signUp(){
      }else{
          const promise = auth.createUserWithEmailAndPassword(UserMail, UserPass).then(function(){
 
-            alert("Signed Up");
          var fuserid = firebase.auth().currentUser.uid;
          console.log(fuserid);
          firebase.database().ref("JAVASCRIPTLOGIN/"+fuserid).set({
@@ -44,7 +43,9 @@ function signUp(){
              "Avatar" : "https://firebasestorage.googleapis.com/v0/b/chat-app2-b59ab.appspot.com/o/JSIMG%2Fpp.png?alt=media&token=17b65eef-fe8d-4ff0-9b8f-3ada4ffd4e11",
              "Password": UserPass
          });
-
+ window.setInterval(function() {
+  alert("Acount  Created");
+              }, 2000);
 
 
          }).catch(function(error){
