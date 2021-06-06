@@ -1,5 +1,20 @@
-var UserName , UserMail, UserPass;
+
+var firebaseConfig = {
+    apiKey: "AIzaSyDNCHcEXWEfmydLleKIybu37LOo4ORR7B4",
+    authDomain: "chat-app2-b59ab.firebaseapp.com",
+    databaseURL: "https://chat-app2-b59ab.firebaseio.com",
+    projectId: "chat-app2-b59ab",
+    storageBucket: "chat-app2-b59ab.appspot.com",
+    messagingSenderId: "372802461916",
+    appId: "1:372802461916:web:e1dc92770ae3cc011c5419",
+    measurementId: "G-CWGH18RHPL"
+  };
+
+  firebase.initializeApp(firebaseConfig); 
+
+var UserName = "temp" , UserMail, UserPass;
 var c = console.log;
+var fuserid ;
 
 const auth = firebase.auth();
 
@@ -17,58 +32,61 @@ function inputvalues(){
 //---------------Signin --- Register ----------//
 function SignIn(){
     inputvalues();
- 
-    
     const promise = auth.signInWithEmailAndPassword(UserMail, UserPass);
-    c(UserName);
-    c(UserPass);
-    c(UserMail);
     promise.catch(e => alert(e.message));
 }
+var btns = document.getElementById('btn-login');
 
+btns.onclick = function() {
 
-function signUp(){
     inputvalues();
     if(UserName === "" || UserMail === "" || UserPass === ""){
         alert("Fill out all field");
      }else{
          const promise = auth.createUserWithEmailAndPassword(UserMail, UserPass).then(function(){
 
-         var fuserid = firebase.auth().currentUser.uid;
-         console.log(fuserid);
-         firebase.database().ref("JAVASCRIPTLOGIN/"+fuserid).set({
-             "uid": fuserid ,
-             "Email": UserMail,
-             "name": UserName,
-             "Avatar" : "https://firebasestorage.googleapis.com/v0/b/chat-app2-b59ab.appspot.com/o/JSIMG%2Fpp.png?alt=media&token=17b65eef-fe8d-4ff0-9b8f-3ada4ffd4e11",
-             "Password": UserPass
-         });
- window.setInterval(function() {
-  alert("Acount  Created");
-              }, 2000);
-
-
-         }).catch(function(error){
-              alert(error);
-         });
-      
+             fuserid = firebase.auth().currentUser.uid;
+             console.log(fuserid);
+             
+             info();
+             alert("Account Created");
          
+         
+        }).catch(function(error){
+            alert(error);
+        });   
+        
          document.getElementById('pass').value = ''
          document.getElementById('mail').value = ''
          document.getElementById('name').value = ''
          // prevent form from submitting
-         return false;
-     }
-}
+         
+        }
+        // info();
+        return false;
+    }
 
 //---------------Signin --- Register ----------//
+
+function info(){
+    c("info ruunnning");
+    c(fuserid);
+    c(UserName);
+    firebase.database().ref("JAVASCRIPTLOGIN/"+fuserid).set({ 
+        "uid": fuserid ,
+        "Email": UserMail,
+        "name": UserName,
+        "Avatar" : "https://firebasestorage.googleapis.com/v0/b/chat-app2-b59ab.appspot.com/o/JSIMG%2Fpp.png?alt=media&token=17b65eef-fe8d-4ff0-9b8f-3ada4ffd4e11",
+        "Password": UserPass
+    });
+}
 
 
 //----------SignOut------------------//
 function outSign(){
 		
     auth.signOut();
-    alert("Signed Out");
+    c("Signed Out");
     
 }
 outSign();
@@ -154,19 +172,18 @@ auth.onAuthStateChanged(function(user){
     if(user){
         
         var email = user.email;
-        var userid = user.uid;
-        alert(email);
-        var r = confirm("Active User " + email+"\n uid :"+userid+"   "+"\nPress ok To continue  to Home Page\n Press Cancel To Stay Here");
-        if (r == true) {
+       var  userid = user.uid;
+       
             // Take user to a different or home page
-            window.location.replace("home.html");
-            localStorage.setItem("uid",userid);
-            localStorage.setItem("mail",email);
+            window.setInterval(function() {
+                window.location.replace("home.html");
+                localStorage.setItem("uid",userid);
+                localStorage.setItem("mail",email);
+           
+              }, 2000);
             // is signed in
         
-        } else {
-           
-        }
+      
         
         
     }else{
