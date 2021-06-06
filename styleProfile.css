@@ -1,0 +1,97 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: crimson;
+}
+body{
+
+    background-color: cornsilk;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    
+}
+.profilebox{
+    font-weight: 800;
+    color: crimson;
+    padding: 30px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    box-shadow: 3px 7px 24px -1px rgba(0,0,0,0.3);
+-webkit-box-shadow: 3px 7px 24px -1px rgba(0,0,0,0.3);
+-moz-box-shadow: 3px 7px 24px -1px rgba(0,0,0,0.3);
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    text-align: center;
+}
+.container .profilebox img{
+ border-radius: 50%;
+width: 200px;
+height: 200px;
+}
+.container .profilebox h2 , .container .profilebox h4{
+    margin: 10px;
+}
+.container .profilebox .edit ,  #select ,#upload{
+    background-color: transparent;
+    border:  2px solid  crimson;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    font-weight: bolder;
+    
+}
+.container .profilebox .edit:hover , #select:hover , #upload:hover{
+background-color: crimson;
+color: white;
+}
+.none{
+    display: none;
+}
+
+#custom-button {
+    padding: 10px;
+    color: white;
+    background-color: #009578;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #custom-button:hover {
+    background-color: #00b28f;
+  }
+  
+  #custom-text {
+    margin-left: 10px;
+    font-family: sans-serif;
+    color: #aaa;
+  }
+  #myProgress {
+    width: 100%;
+    background-color: grey;
+  }
+  
+  #myBar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+  }
+  #anker{
+    color: crimson;
+   cursor: pointer;
+}
+#anker:hover{
+    color: blue;
+    
+}
+  

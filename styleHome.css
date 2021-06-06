@@ -1,0 +1,398 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Segoe UI', Helvetica Nenu, Helvetica, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(180deg, #dddbd1, #d2dbdc);
+}
+
+.top {
+    height: 130px;
+    width: 100%;
+    background-color: crimson;
+    position: fixed;
+    z-index: -1;
+}
+#pp{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid crimson;
+}
+
+.chatbox {
+    height: calc(100% - 40px);
+    width: 95%;
+    margin-top: 20px;
+    padding: 0;
+
+}
+
+.profile-pic ,.group-pic {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.form-rounded {
+    border-radius: 1rem;
+}
+
+.friend-pic {
+    height: 40px;
+    border-radius : 50%;
+    width: 40px;
+    margin-left: 10px
+}
+
+.name {
+    font-weight: 400;
+    color: #000;
+}
+
+.under-name {
+    font-size: 12px;
+    line-height: 15px;
+    max-height: 15px;
+}
+
+.icon {
+    font-size: 20px;
+    color: #9CA1A3;
+    cursor: pointer;
+}
+
+.chat-pic {
+    height: 30px;
+    width: 30px;
+}
+
+.recieve {
+    background-color: lightgreen;
+    border-radius: 1rem;
+    padding: 5px 10px;
+    display: inline-block;
+    float:left;
+    margin: 5px;
+    cursor: pointer;
+}
+.recieve h3{
+    font-size: 1em;
+}
+
+.sent {
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    padding: 5px 10px;
+    display: inline-block;
+    font-size: 1em;
+    float: right;
+    margin: 5px;
+    cursor: pointer;
+}
+.sent h3{
+    font-size: 1em;
+}
+
+.time {
+    font-size: 10px;
+    color: #9CA1A3;
+    margin-top: 3%;
+    margin-left: 1%;
+}
+
+.card {
+    height: 94vh;
+}
+#exit{
+    cursor: pointer;
+}
+
+.card-body  , .UserListBody {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 300px;
+ 
+ 
+}
+.chatlistBody{
+  overflow: scroll;
+  height: 30rem;
+}
+#messages , #testListChat , #userslist {
+
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#userslist{
+    padding: 0px;
+}
+
+#lstChat {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.dropdown-toggle::before {
+    display: none !important;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+
+#myTabContent a {
+    text-decoration: none;
+}
+
+#notification {
+    background-color: red;
+    border: 1px solid red;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: -10%;
+    font-size: 12px;
+    width: 30%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    margin-left: -12%;
+}
+#divStart{
+    overflow: hidden;
+}
+.navChat{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+}
+.navChat #username{
+    margin: 0px 20px;
+}
+.bodyChat .content{
+    width: 100%;
+    height: 480px;
+    /* background-color: darkgreen; */
+}
+#testListChat{
+    width: 100%;
+    list-style: none;
+    padding: 0px;
+}
+#testListChat li{
+    overflow: hidden;
+    padding: 10px;
+    border-bottom: 1px solid  #d2dbdc ;
+}
+#testListChat li:hover{
+     background-color: rgba(210, 219, 220,0.2) ;
+}
+.mobileview{
+    display: none;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+}
+@media screen and (max-width:768px) {
+    #testListChat li{
+        font-size: 0.6rem;
+        padding: 10px;
+    }
+    .col-md-2 .friend-pic{
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        margin-left: 10px;
+
+    }
+    #testListChat li .under-name{
+        font-size: 0.8rem;
+    }
+    body , html{
+        overflow: scroll;
+    }
+
+    
+.recieve {
+    border-radius: 1rem;
+    padding: 5px 10px;
+    font-size: 0.6em;
+}
+.recieve h3{
+    font-size: 0.9em;
+}
+
+
+.sent {
+
+    border-radius: 1rem;
+    padding: 5px 10px;
+    font-size: 0.6em;
+}
+.sent h3{
+    font-size: 0.9em;
+}
+.container-fluid{
+    width: auto;
+    height: auto;
+}
+#side-2{
+    height: 100vh;
+
+}
+#title2{
+    font-size: 1em;
+}
+.UserListBody .name {
+font-size:  1em;
+margin: 10px 10px 20px 20px;
+}
+#userslist{
+    padding: 0px;
+}
+
+/* .mobileview{
+    display: block;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    color: aliceblue;
+}
+.top{
+    height: 100vh;
+    
+} */
+}
+
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 500px;
+  }
+  
+  /* Caption of Modal Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+  
+  /* Add Animation */
+  .modal-content, #caption {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+  }
+
+  
+/* The Modal (background)  Modal For User List */
+.ModalUser {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content2 {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close2 {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close2:hover,
+  .close2:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
